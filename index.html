@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventsHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Tela de Login/Cadastro -->
+    <div id="auth-screen">
+      <div class="auth-container">
+        <h1>Bem-vindo a EventsHub </h1>
+        <p class="welcome-message">Tudo para o seu evento em um só lugar!</p>
+        <form id="auth-form">
+          <input type="email" id="email" placeholder="E-mail" required>
+          <input type="password" id="password" placeholder="Senha" required>
+          <button type="submit" id="login-btn">Entrar</button>
+          <button type="button" id="register-btn">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tela Inicial (Categorias) -->
+    <div id="home-screen" class="hidden">
+      <div class="header">
+        <div class="header-content">
+          <button class="back-btn hidden"></button>
+          <div class="logo-container">
+            <img src="https://via.placeholder.com/40" alt="Logo" class="logo-img">
+            <span class="logo">EventsHub</span>
+          </div>
+          <button id="cart-icon" onclick="showCart()">🛒</button>
+        </div>
+      </div>
+      <div class="content">
+        <h2 class="screen-title">Categorias</h2>
+        <div id="categories"></div>
+      </div>
+    </div>
+
+    <!-- Tela de Lojas -->
+    <div id="stores-screen" class="hidden">
+      <div class="header">
+        <div class="header-content">
+          <button class="back-btn" onclick="goBack()">←</button>
+          <div class="logo-container">
+            <img src="https://via.placeholder.com/40" alt="Logo" class="logo-img">
+            <span class="logo">EventsHub</span>
+          </div>
+          <button id="cart-icon" onclick="showCart()">🛒</button>
+        </div>
+      </div>
+      <div class="content">
+        <h2 class="screen-title" id="store-category"></h2>
+        <div id="store-list"></div>
+      </div>
+    </div>
+
+    <!-- Tela de Produtos -->
+    <div id="products-screen" class="hidden">
+      <div class="header">
+        <div class="header-content">
+          <button class="back-btn" onclick="goBack()">←</button>
+          <div class="logo-container">
+            <img src="https://via.placeholder.com/40" alt="Logo" class="logo-img">
+            <span class="logo">EventsHub</span>
+          </div>
+          <button id="cart-icon" onclick="showCart()">🛒</button>
+        </div>
+      </div>
+      <div class="content">
+        <h2 class="screen-title" id="product-store"></h2>
+        <div id="product-list"></div>
+      </div>
+    </div>
+
+    <!-- Tela do Carrinho -->
+    <div id="cart-screen" class="hidden">
+      <div class="header">
+        <div class="header-content">
+          <button class="back-btn" onclick="goBack()">←</button>
+          <div class="logo-container">
+            <img src="https://via.placeholder.com/40" alt="Logo" class="logo-img">
+            <span class="logo">EventsHub</span>
+          </div>
+          <div class="header-right"></div>
+        </div>
+      </div>
+      <div class="content">
+        <h2 class="screen-title">Carrinho</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total" class="cart-total"></div>
+        <input type="text" id="address" placeholder="Endereço de entrega" required>
+        <select id="payment-method" required>
+          <option value="">Selecione a forma de pagamento</option>
+          <option value="credit-card">Cartão de Crédito</option>
+          <option value="debit-card">Cartão de Débito</option>
+          <option value="pix">PIX</option>
+        </select>
+        <button id="checkout-btn">Finalizar Pedido</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
